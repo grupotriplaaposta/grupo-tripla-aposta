@@ -3,7 +3,7 @@ function pegaval(event){
     var senha  = "TRIPLATESTE";
     var acesso = document.getElementById("acess").value;
 
-    var senhasValidas = ["231912", "295649", "643632", "869122"];
+    var senhasValidas = ["231912", "295649", "643632", "869122", "246810"];
 
     // Verificar se a senha está na lista de senhas válidas
     if (senhasValidas.includes(acesso)) {

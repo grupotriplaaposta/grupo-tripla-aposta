@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #de0022;
+            background-image: linear-gradient(90deg, #de0022 0%, #1a061a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #de0022;
+            background-image: linear-gradient(90deg, #de0022 0%, #1a061a 100%);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .rectangle {
+            width: 350px;
+            height: 200px;
+            /* cor inicial */
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .rectangle div {
+            background-color: white;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            border: solid 2px black;
+            text-align: center;
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .rectangle div.clicked {
+            background-color: black;
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: azure;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            body {
+                height: auto;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .rectangle {
+                width: 250px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-container">
+            <div class="title">Vizinhos Baixos</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">2</div>
+                <div onclick="changeColor(this)">4</div>
+                <div onclick="changeColor(this)">12</div>
+                <div onclick="changeColor(this)">7</div>
+                <div onclick="changeColor(this)">3</div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Vizinhos Médios</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">19</div>
+                <div onclick="changeColor(this)">18</div>
+                <div onclick="changeColor(this)">22</div>
+                <div onclick="changeColor(this)">21</div>
+                <div onclick="changeColor(this)">15</div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Vizinhos Altos</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">26</div>
+                <div onclick="changeColor(this)">25</div>
+                <div onclick="changeColor(this)">28</div>
+                <div onclick="changeColor(this)">29</div>
+                <div onclick="changeColor(this)">35</div>
+                <div onclick="changeColor(this)">32</div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Orfãos Baixos</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">1</div>
+                <div onclick="changeColor(this)">6</div>
+                <div onclick="changeColor(this)">9</div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Orfãos Médios</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">20</div>
+                <div onclick="changeColor(this)">14</div>
+                <div onclick="changeColor(this)">17</div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Orfãos Altos</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">34</div>
+                <div onclick="changeColor(this)">31</div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Tiers Baixos</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">8</div>
+                <div onclick="changeColor(this)">10</div>
+                <div onclick="changeColor(this)">5</div>
+                <div onclick="changeColor(this)">11</div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Tiers Médios</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">16</div>
+                <div onclick="changeColor(this)">13</div>
+                <div onclick="changeColor(this)">24</div>
+                <div onclick="changeColor(this)">23</div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+        <div class="title-container">
+            <div class="title">Tiers Altos</div>
+            <div class="rectangle">
+                <div onclick="changeColor(this)">30</div>
+                <div onclick="changeColor(this)">27</div>
+                <div onclick="changeColor(this)">33</div>
+                <div onclick="changeColor(this)">36</div>
+                <div onclick="changeColor(this)"> - </div>
+                <div onclick="changeColor(this)"> - </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="recarregarRetangulos()">Recarregar</button>
+    </div>
+</body>
+<script src="acess.js"></script>
+<script>
+    window.onload = function () {
+
+        var senhasValidas = ["231912", "295649", "643636", "869122"];
+        var senha = prompt("Digite a senha:");
+
+        // Verificar se a senha está na lista de senhas válidas
+        if (senhasValidas.includes(senha)) {
+            return true; // Senha válida
+        } else {
+            var url = "login.html";
+            window.location.href = url;
+            return false; // Senha inválida
+        }
+    };
+</script>
+
+
+</html>
